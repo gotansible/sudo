@@ -1,0 +1,10 @@
+---
+
+- name: create sudo group file in /etc/sudoers.d/
+  template:
+    src=sudo-group.j2
+    dest=/etc/sudoers.d/10-sudo-group-{{ sudo_group }}
+    owner=root
+    group=root
+    mode=440
+
